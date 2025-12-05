@@ -50,6 +50,10 @@ namespace StarterAssets
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+		
+		[Header("Sounds")]
+		[Tooltip("JumpSound")]
+		[SerializeField] AudioSource jumpSound;
 
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -220,6 +224,7 @@ namespace StarterAssets
 				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
+					jumpSound.Play();
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 				}
 

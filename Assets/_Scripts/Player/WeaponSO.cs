@@ -6,6 +6,8 @@ public class WeaponSO : ScriptableObject
     public GameObject WeaponPrefab;
     public GameObject HitVFXPrefab;
     
+    public AudioClip ShootSound;
+    
     public int Damage = 1;
     public int MagazineSize = 12;
     

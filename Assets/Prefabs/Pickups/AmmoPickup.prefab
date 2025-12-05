@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 149d361e5a584c745b77a8fb38487804, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSound: {fileID: 8300000, guid: 6aaa35f02c5569f4fbff9ded82b2172e, type: 3}
   ammoAmount: 100
 --- !u!135 &412814726220933365
 SphereCollider:

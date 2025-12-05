@@ -19,6 +19,7 @@ public class ActiveWeapon : MonoBehaviour
     FirstPersonController _firstPersonController;
     Weapon _currentWeapon;
     WeaponSO _currentWeaponSo;
+    AudioSource _audioSource;
     
     const string SHOOT_STRING = "Shoot";
 
@@ -36,6 +37,8 @@ public class ActiveWeapon : MonoBehaviour
         _defaultFOV = playerFollowCamera.m_Lens.FieldOfView;
         _defaultRotationSpeed = _firstPersonController.RotationSpeed;
         zoomVignette.SetActive(false);
+        _audioSource = gameObject.AddComponent<AudioSource>();
+        _audioSource.playOnAwake = false;
     }
 
     void Start()
@@ -71,7 +74,6 @@ public class ActiveWeapon : MonoBehaviour
         Weapon newWeapon = Instantiate(weaponSo.WeaponPrefab, transform).GetComponent<Weapon>();
         _currentWeapon = newWeapon;
         _currentWeaponSo = weaponSo;
-        
         AdjustAmmo(_currentWeaponSo.MagazineSize); 
     }
 
@@ -85,6 +87,7 @@ public class ActiveWeapon : MonoBehaviour
         {
             _currentWeapon.Shoot(_currentWeaponSo);
             _animator.Play(SHOOT_STRING, 0, 0f);
+            _audioSource.PlayOneShot(_currentWeaponSo.ShootSound);
             _timeSinceLastShot = 0f;
             AdjustAmmo(-1);
         }

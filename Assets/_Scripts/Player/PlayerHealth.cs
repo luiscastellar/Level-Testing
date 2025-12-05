@@ -1,4 +1,5 @@
 using Cinemachine;
+using StarterAssets;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] CinemachineVirtualCamera deathVirtualCamera;
     [SerializeField] Transform weaponCamera;
     [SerializeField] Image[] shieldBars;
+    [SerializeField] GameObject gameOverContainer;
+    
+    static AudioSource _audioSource;
     
     int _currentHealth;
     int _gameOverVirtualCameraPriority = 20;
@@ -16,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         _currentHealth = startingHealth;
-        
+        _audioSource = GetComponent<AudioSource>();
         AdjustShieldUI();
     }
 
@@ -28,10 +32,18 @@ public class PlayerHealth : MonoBehaviour
         
         if (_currentHealth <= 0)
         {
-            weaponCamera.parent = null;
-            deathVirtualCamera.Priority = _gameOverVirtualCameraPriority;
-            Destroy(gameObject);
+            PlayerGameOver();
         }
+    }
+
+    void PlayerGameOver()
+    {
+        weaponCamera.parent = null;
+        deathVirtualCamera.Priority = _gameOverVirtualCameraPriority;
+        gameOverContainer.SetActive(true);
+        StarterAssetsInputs starterAssetsInputs = FindFirstObjectByType<StarterAssetsInputs>();
+        starterAssetsInputs.SetCursorState(false);
+        Destroy(gameObject);
     }
 
     void AdjustShieldUI()
@@ -40,5 +52,10 @@ public class PlayerHealth : MonoBehaviour
         {
             shieldBars[i].gameObject.SetActive(i < _currentHealth);
         }
+    }
+
+    public static void PlaySound(AudioClip clip)
+    {
+        _audioSource.PlayOneShot(clip);
     }
 }
