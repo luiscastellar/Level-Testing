@@ -48,8 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13458f13e0f33a14ba385f5d3f4d4e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpSpawnProbability: 4
   startingHealth: 10
   explosionVFX: {fileID: 8009489924186610516, guid: 319db80c066c50d4987300584b27dbf4, type: 3}
+  pickUps:
+  - {fileID: 5675176333522740289, guid: e19a3a241ec5ccb4eaac4b28bff6cc29, type: 3}
+  - {fileID: 2217292218656382763, guid: d1500ea5b172f6540a45d59643d3f6e3, type: 3}
   explodeSound: {fileID: 8300000, guid: 571158dafe9c08c4aa76da88557008d8, type: 3}
   healthBarPrefab: {fileID: 9065550533233425014, guid: be52cc9d0dd0d3e4a8b47370880e5e75, type: 3}
   healthBarPoint: {fileID: 445267439642729880}

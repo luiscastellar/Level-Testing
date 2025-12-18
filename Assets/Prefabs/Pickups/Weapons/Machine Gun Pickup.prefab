@@ -119,6 +119,10 @@ PrefabInstance:
       value: Machine Gun Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 3816572811476557097, guid: 5ce629371d8206b40932e6f1bfa05647, type: 3}
+      propertyPath: _weaponSO
+      value: 
+      objectReference: {fileID: 11400000, guid: b1102b03980c72f4fb5701426629e8d7, type: 2}
+    - target: {fileID: 3816572811476557097, guid: 5ce629371d8206b40932e6f1bfa05647, type: 3}
       propertyPath: _weaponSo
       value: 
       objectReference: {fileID: 11400000, guid: b1102b03980c72f4fb5701426629e8d7, type: 2}

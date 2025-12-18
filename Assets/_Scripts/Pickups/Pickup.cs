@@ -7,21 +7,18 @@ public abstract class Pickup : MonoBehaviour
     
     [SerializeField] AudioClip pickupSound;
 
-    void Start()
-    {
-        //PlayerHealth playerHealth = FindFirstObjectByType<PlayerHealth>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(PLAYER_STRING))
         {
             ActiveWeapon activeWeapon = other.GetComponentInChildren<ActiveWeapon>();
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+
             PlayerHealth.PlaySound(pickupSound);
-            OnPickup(activeWeapon);
+            OnPickup(activeWeapon, playerHealth);
             Destroy(gameObject);
         }
     }
     
-    protected abstract void OnPickup(ActiveWeapon activeWeapon);
+    protected abstract void OnPickup(ActiveWeapon activeWeapon, PlayerHealth playerHealth);
 }

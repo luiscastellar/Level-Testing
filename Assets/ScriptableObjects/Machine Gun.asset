@@ -15,6 +15,7 @@ MonoBehaviour:
   WeaponPrefab: {fileID: 7879340597618770618, guid: fb13cce3b65bdc7458856355f60d2e08, type: 3}
   HitVFXPrefab: {fileID: 8620188461513712182, guid: 169e2097ac24d564ab4fc5503f23a0b7, type: 3}
   ShootSound: {fileID: 8300000, guid: edbed64e3743a904aa686f481733fc65, type: 3}
+  Icon: {fileID: 21300000, guid: fe28254aa063800478db12a20dd94144, type: 3}
   Damage: 1
   MagazineSize: 100
   FireRate: 0.1

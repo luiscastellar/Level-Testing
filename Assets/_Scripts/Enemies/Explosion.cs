@@ -4,18 +4,12 @@ using UnityEngine;
 public class Explosion : MonoBehaviour
 {
     [SerializeField] float radius = 1.7f;
-    [SerializeField] int damage = 3;
+    [SerializeField] int damage = 2;
 
     void Start()
     {
         Explode();
     }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
-    } 
 
     void Explode()
     {

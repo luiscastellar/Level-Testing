@@ -4,8 +4,8 @@ public class AmmoPickup : Pickup
 {
     [SerializeField] int ammoAmount = 100;
     
-    protected override void OnPickup(ActiveWeapon activeWeapon)
+    protected override void OnPickup(ActiveWeapon activeWeapon, PlayerHealth playerHealth)
     {
-        activeWeapon.AdjustAmmo(ammoAmount);
+        activeWeapon.GiveAmmoToCurrentWeapon(ammoAmount);
     }
 }

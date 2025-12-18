@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class WeaponPickup : Pickup
 {
-    [SerializeField] private WeaponSO _weaponSo;
+    [SerializeField] WeaponSO _weaponSO;
     
-    protected override void OnPickup(ActiveWeapon activeWeapon)
+    protected override void OnPickup(ActiveWeapon activeWeapon, PlayerHealth playerHealth)
     {
-        activeWeapon.SwitchWeapon(_weaponSo);
+        activeWeapon.AddWeapon(_weaponSO, giveFullMagazine: true);
     }
 }

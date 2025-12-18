@@ -213,6 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0dd73f1cf1d7045959febcf5622513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSpeed: 2
+  maxSpeed: 6
 --- !u!135 &7594306383552726437
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -246,8 +248,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13458f13e0f33a14ba385f5d3f4d4e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickUpSpawnProbability: 7
   startingHealth: 3
   explosionVFX: {fileID: 8009489924186610516, guid: 7e6dac97943a6f44fb5ba6029a986ab4, type: 3}
+  pickUps:
+  - {fileID: 2217292218656382763, guid: d1500ea5b172f6540a45d59643d3f6e3, type: 3}
+  - {fileID: 5675176333522740289, guid: e19a3a241ec5ccb4eaac4b28bff6cc29, type: 3}
   explodeSound: {fileID: 8300000, guid: 571158dafe9c08c4aa76da88557008d8, type: 3}
   healthBarPrefab: {fileID: 9065550533233425014, guid: be52cc9d0dd0d3e4a8b47370880e5e75, type: 3}
   healthBarPoint: {fileID: 7987113825685588429}
@@ -307,16 +313,16 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: d897dd4af569a01469952638432132f3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 30
+  Priority: 50
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 50
+  MaxDistance: 75
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0

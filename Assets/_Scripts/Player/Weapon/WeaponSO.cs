@@ -8,6 +8,8 @@ public class WeaponSO : ScriptableObject
     
     public AudioClip ShootSound;
     
+    public Sprite Icon;
+    
     public int Damage = 1;
     public int MagazineSize = 12;
     
